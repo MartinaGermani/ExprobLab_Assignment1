@@ -1,3 +1,3 @@
 # ExprobLab_Assignment1
 
-## Brief introduction to the project
+### 1. Brief introduction to the project
