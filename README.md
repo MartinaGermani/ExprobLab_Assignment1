@@ -11,7 +11,7 @@ For implementing the robot's behavior described above, the State Machine is comp
 -   Wait state, where the robot waits for some times in the current location,
 -   Recharge state, in which the machine goes when the robot's battery becomes lows. In this state the robot moves in the recharging station (in this case located in room E) where it will recharge its battery.  
 
-The state diagram is below reported.
+The state diagram is below reported, where the idea is that the robot starts moving from the starting room (in this case room E) to a reachable corridor, where it will wait until a room becomes urgent. In fact, when a room becomes urgent, the robot stops to wait and move in the room where it will wait for some seconds, after that it will return in the reachable corridor. The robot mantains this behavior unless its battery becomes low: in this case the robot goes to the recharging station, located in room E, where it will wait until its battery will be recharged, after that it will resume moving between the locations according to the logic described above.
 
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/state_machine.png?raw=true)
 
