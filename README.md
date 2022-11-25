@@ -10,3 +10,5 @@ For implementing the robot's behavior described above, the State Machine is comp
 -   Move state, where the robot moves between corridors and one of the room, when one of them becomes urgent,
 -   Wait state, where the robot waits for some times in the current location,
 -   Recharge state, in which the machine goes when the robot's battery becomes lows. In this state the robot moves in the recharging station (in this case located in room E) where it will recharge its battery.  
+
+Regarding the building of the indoor environment's map, I created an ontology using Portégé editor, which then I loaded within the ROS architecture. 
