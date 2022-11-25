@@ -9,4 +9,4 @@ The goal of the robot is to move between different locations in order to visit t
 For implementing the robot's behavior described above, the State Machine is composed by three different states:
 -   Move state, where the robot moves between corridors and one of the room, when one of them becomes urgent,
 -   Wait state, where the robot waits for some times in the current location,
--   Recharge state, where the robot moves in the recharging station (in this case located in room E) when it
+-   Recharge state, when the machine goes when the robot's battery becomes lows. In this state the robot moves in the recharging station (in this case located in room E) where it will recharge its battery.  
