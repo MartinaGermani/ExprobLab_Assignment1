@@ -25,4 +25,5 @@ To use this OWL ontology and its reasoner within ROS I used aRMOR [1], in partic
 
 ### References
 [1] https://github.com/EmaroLab/armor
+
 [2] https://github.com/EmaroLab/armor_py_api
