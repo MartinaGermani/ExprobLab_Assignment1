@@ -14,3 +14,9 @@ For implementing the robot's behavior described above, the State Machine is comp
 Regarding the building of the indoor environment's map, I created an ontology using Portégé editor, which then I loaded within the ROS architecture. In particular, a map of the indoor environment which I took into consideretion is below reported. 
 
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/map.jpg?raw=true)
+So, as it's evident, the environment is composed by 3 different main classes:
+- DOOR: D1, D2, D3, D4, D5, D6, D7
+- LOCATION, which contains 2 subclasses: 
+      - CORRIDOR
+      - ROOM
+- ROBOT: Robot1
