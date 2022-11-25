@@ -13,7 +13,7 @@ For implementing the robot's behavior described above, the State Machine is comp
 
 The state diagram is below reported.
 
-![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/state_machine.jpg?raw=true)
+![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/state_machine.png?raw=true)
 
 Regarding the building of the indoor environment's map, I created an ontology using Portégé editor, which then I loaded within the ROS architecture. In particular, a map of the indoor environment which I took into consideretion is below reported. 
 
