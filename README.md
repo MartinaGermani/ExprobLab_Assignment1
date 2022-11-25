@@ -16,7 +16,5 @@ Regarding the building of the indoor environment's map, I created an ontology us
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/map.jpg?raw=true)
 So, as it's evident, the environment is composed by 3 different main classes:
 - DOOR: D1, D2, D3, D4, D5, D6, D7
-- LOCATION, which contains 2 subclasses: 
-      - CORRIDOR
-      - ROOM
+- LOCATION, which contains 2 subclasses: CORRIDOR (C1, C2) and ROOM (E, R1, R2, R3, R4)
 - ROBOT: Robot1
