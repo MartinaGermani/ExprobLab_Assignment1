@@ -21,3 +21,6 @@ So, as it's evident, the environment is composed by 3 different main classes:
 - ROBOT: Robot1
 
 To use this OWL ontology and its reasoner within ROS I used aRMOR, in particular armor_py_api, which simplifies the calls to aRMOR, but it can only be used from a python-based ROS node. 
+
+
+### References
