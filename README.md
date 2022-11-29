@@ -53,7 +53,7 @@ To use this OWL ontology and its reasoner within ROS I used `aRMOR` [1], in part
 This architecture runs on ROS noetic. It also requires [aRMOR](https://github.com/EmaroLab/armor) and the [ArmorPy API](https://github.com/EmaroLab/armor_py_api).
 Once you have all the installation required, you have to do the following steps:
 - ```bash
-$ git clone https://github.com/MartinaGermani/ExprobLab_Assignment1.git
+$ python git clone https://github.com/MartinaGermani/ExprobLab_Assignment1.git
 ```
 
 ### References
