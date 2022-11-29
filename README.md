@@ -19,7 +19,7 @@ The Planner node implements a `SimpleActionServer` named `motion/planner`. It re
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/diagrams/planner_diagram.png?raw=true) 
 ### The `Controller` node ###
 The Controller node implements a `SimpleActionServer` named `motion/controller`. It requires as goal a list of `via_points` given by the `planner`. 
-In particular, given the plan, this component waits fro each planned `via_points` and print the `via_points` on the screen in order to simulate the time spent for moving the robot to the location.
+In particular, given the plan, this component waits for each planned `via_points` and prints the `via_points` on the screen in order to simulate the time spent for moving the robot to the location.
 When the last `via_points` is reached, it provides a result.
 
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/diagrams/controller_diagram.png?raw=true) 
@@ -30,11 +30,15 @@ The State-Assignment node implements the `Finite-State-Machine` which manages th
 
 ### 3. Software Behaviour
 For implementing the robot's behavior the State Machine is composed by three different states:
--   `Move` state, where the robot moves between corridors and rooms, when one of them becomes urgent,
--   `Wait` state, where the robot waits for some times in the current location,
+-   `Move` state, where the robot moves between corridors and rooms, when one of them becomes urgent
+-   `Wait` state, where the robot waits for some times in the current location
 -   `Recharge` state, in which the machine goes when the robot's battery becomes lows. In this state the robot moves in the recharging station (in this case located in room E) where it will recharge its battery.  
 
-The state diagram is below reported, where the idea is that the robot starts moving from the starting room (in this case room E) to a reachable corridor, where it will wait until a room becomes urgent. In fact, when a room becomes urgent, the robot stops to wait and move in the room where it will wait for some seconds, after that it will return in the reachable corridor. The robot mantains this behavior unless its battery becomes low: in this case the robot goes to the recharging station, located in room E, where it will wait until its battery will be recharged, after that it will resume moving between the locations according to the logic described above.
+The state diagram is below reported, where the idea is that the robot starts moving (`Move` state) from the starting room (in this case room `E`) to a reachable corridor, where it will checks if some room is urgent. 
+When a room becomes urgent, the robot moves in the urgent room where it will wait for some seconds (`Wait` state), after that it will return in the reachable corridor. 
+Anytime the robot visits a location it will update the `timestamp` value associated to that location (this value represents the last time the robot visited that location). 
+The robot mantains this behavior unless its battery becomes low: in this case, if it's not already there, the robot goes to the recharging station, located in room `E`, where it will wait until its battery will be recharged, after that it will resume moving between the locations according to the logic described above.
+Moreover, thanks to some controls implemented, the robot is able to reach any location in the environment by checking where is it and what are the possible connections between the locations. 
 
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/state_machine.png?raw=true)
 
@@ -48,6 +52,9 @@ So, as it's evident, the environment is composed by 3 different main classes:
 - `ROBOT`: Robot1
 
 To use this OWL ontology and its reasoner within ROS I used [aRMOR](https://github.com/EmaroLab/armor), in particular [ArmorPy API](https://github.com/EmaroLab/armor_py_api), which simplifies the calls to aRMOR, but it can only be used from a python-based ROS node.
+
+For simulating the motion of the robot I created a parameter called `coordinates` which contains the point coordinates which I set for each location in the environment. These coordinates will be used by the planner for planning the path which the robot should follow in order to reach the desired location. The following map shows the points associated to each location.
+![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/diagrams/map_points.jpg?raw=true)
 
 ### 4. Installation and running procedure
 This architecture runs on ROS noetic. It also requires [aRMOR](https://github.com/EmaroLab/armor) and the [ArmorPy API](https://github.com/EmaroLab/armor_py_api).
@@ -89,7 +96,7 @@ System limitations:
 - there is not a physical model for the motion but it is only simulated
 - the loading of the ontology is static and it is based on a known environment, while a possible improvement could consist in creating the ontology in real-time as the robot moves in the environment
 - the sequence of urgent rooms to visit is fixed having set in advance a timestamp for each location, a value which will then be updated as the robot visits the location itself. 
-
+- I set only a point for each location, so in the simulation the robot doesn't move really inside the location but it only arrives in a fixed point associated to the location. 
 
 ### 8. Author and Contact
 *Author*: **Germani Martina**
