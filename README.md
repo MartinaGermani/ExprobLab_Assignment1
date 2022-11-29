@@ -30,6 +30,8 @@ To use this OWL ontology and its reasoner within ROS I used aRMOR [1], in partic
 The software is composed of 4 nodes, each one available in the `scripts/` folder. 
 ### The `robot-state` node ###
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/robot_state_diagram.png?raw=true)
+This node implements a publisher of `Boolean` messages into the `state/battery_low` topic. This boolean value is published anytime the robot battery switches between the two possible states: low battery (i.e `True` is published) and recharged (i.e `False` is published). 
+In particular, the simulation of the battery level is defined by a while-loop which modifies the boolean value in a random way, but you can also set the value of the delay variable in order to publish it using a specific delay. 
 
 ### References
 [1] https://github.com/EmaroLab/armor
