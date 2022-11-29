@@ -50,7 +50,8 @@ So, as it's evident, the environment is composed by 3 different main classes:
 To use this OWL ontology and its reasoner within ROS I used `aRMOR` [1], in particular `armor_py_api` [2], which simplifies the calls to aRMOR, but it can only be used from a python-based ROS node.
 
 ### 4. Installation and running procedure
-This architecture runs ROS noetic. It also requires [https://github.com/EmaroLab/armor](aRMOR)
+This architecture runs ROS noetic. It also requires aRMOR, which you can install on your workspace using the following documentation and the ArmorPy API, which you can clone here:
+[aRMOR](https://github.com/EmaroLab/armor)
 ### References
 [1] https://github.com/EmaroLab/armor
 
