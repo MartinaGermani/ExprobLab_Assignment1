@@ -38,7 +38,8 @@ The Planner node implements a `SimpleActionServer` named `motion/planner`. It re
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/diagrams/planner_diagram.png?raw=true) 
 ### The `Controller` node ###
 The Controller node implements a `SimpleActionServer` named `motion/controller`. It requires as goal a list of `via_points` given by the `planner`. 
-In particular, given the plan, this component waits fro each planned `via_points` and print the `via_points` on the screen in order to simulate the time spent for moving the robot to the location. 
+In particular, given the plan, this component waits fro each planned `via_points` and print the `via_points` on the screen in order to simulate the time spent for moving the robot to the location.
+When the last `via_points` is reached, it provides a result.
 
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/diagrams/controller_diagram.png?raw=true) 
 ### References
