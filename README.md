@@ -36,8 +36,10 @@ In particular, the simulation of the battery level is defined by a while-loop wh
 ### The `Planner` node ###
 The Planner node implements a `SimpleActionServer` named `motion/planner`. It requires as goal a string representing the location to reach, then it checks the current location of the robot and transforms the current and the target location from string to point coordinates thanks to the `anm.coordinates` parameter, that contains, for each location, the corresponding coordinates. Given the current and target points location, this component returns a plan as a list of `via_points`, which are randomly generated inside the range represented by the current and target points location. So, when a new `via_points` is generated, the updated plan is provided as `feedback`and when all the `via_points` have been generated, the plan is provided as `results`.
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/planner_diagram.png?raw=true) 
-
-
+### The `Controller` node ###
+The Controller node implements a `SimpleActionServer` named `motion/controller`. It requires as goal a list of `via_points` given by the `planner`. 
+In particular, given the plan, this component waits fro each planned `via_points` in order to simulate the time spent for moving the robot to the location. 
+![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/controller_diagram.png?raw=true) 
 ### References
 [1] https://github.com/EmaroLab/armor
 
