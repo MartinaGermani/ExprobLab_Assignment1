@@ -67,7 +67,10 @@ Here I reporte a video which shows how the architecture behaves:
 
 https://user-images.githubusercontent.com/91315691/204513960-1cee8d3c-ab54-4c7d-813a-ff6d7996b1b3.mp4
 
-
+*bottom-left*: **robot-state node**
+*top-right*: **controller node**
+*middle-right*: **planner node**
+*bottom-right*: **state-assignment**
 
 ### 6. Working hypothesis and environment
 
