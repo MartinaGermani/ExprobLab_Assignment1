@@ -68,4 +68,5 @@ Once you have all the installation required, you have to do the following steps:
 
 ### 7. Author and Contact
 *Author*: **Germani Martina**
+
 *Contact*: **martina.germani99@gmail.com**
