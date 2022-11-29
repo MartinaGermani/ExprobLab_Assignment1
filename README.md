@@ -7,9 +7,9 @@ The goal of the robot is to move between different locations in order to visit t
 
 ### 2. Software Behaviour
 For implementing the robot's behavior described above, the State Machine is composed by three different states:
--   Move state, where the robot moves between corridors and rooms, when one of them becomes urgent,
--   Wait state, where the robot waits for some times in the current location,
--   Recharge state, in which the machine goes when the robot's battery becomes lows. In this state the robot moves in the recharging station (in this case located in room E) where it will recharge its battery.  
+-   `Move` state, where the robot moves between corridors and rooms, when one of them becomes urgent,
+-   `Wait` state, where the robot waits for some times in the current location,
+-   `Recharge` state, in which the machine goes when the robot's battery becomes lows. In this state the robot moves in the recharging station (in this case located in room E) where it will recharge its battery.  
 
 The state diagram is below reported, where the idea is that the robot starts moving from the starting room (in this case room E) to a reachable corridor, where it will wait until a room becomes urgent. In fact, when a room becomes urgent, the robot stops to wait and move in the room where it will wait for some seconds, after that it will return in the reachable corridor. The robot mantains this behavior unless its battery becomes low: in this case the robot goes to the recharging station, located in room E, where it will wait until its battery will be recharged, after that it will resume moving between the locations according to the logic described above.
 
@@ -20,11 +20,11 @@ Regarding the building of the indoor environment's map, I created an ontology us
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/map.jpg?raw=true)
 
 So, as it's evident, the environment is composed by 3 different main classes:
-- DOOR: D1, D2, D3, D4, D5, D6, D7
-- LOCATION, which contains 2 subclasses: CORRIDOR (C1, C2) and ROOM (E, R1, R2, R3, R4)
-- ROBOT: Robot1
+- `DOOR`: D1, D2, D3, D4, D5, D6, D7
+- `LOCATION`, which contains 2 subclasses: CORRIDOR (C1, C2) and ROOM (E, R1, R2, R3, R4)
+- `ROBOT`: Robot1
 
-To use this OWL ontology and its reasoner within ROS I used aRMOR [1], in particular armor_py_api [2], which simplifies the calls to aRMOR, but it can only be used from a python-based ROS node. 
+To use this OWL ontology and its reasoner within ROS I used `aRMOR` [1], in particular `armor_py_api` [2], which simplifies the calls to aRMOR, but it can only be used from a python-based ROS node. 
 
 ### 3. Software Components
 The software is composed of 4 nodes, each one available in the `scripts/` folder. Below is reported the software architecture diagram.
@@ -32,9 +32,11 @@ The software is composed of 4 nodes, each one available in the `scripts/` folder
 ### The `robot-state` node ###
 The robot-state node implements a publisher of `Boolean` messages into the `state/battery_low` topic. This boolean value is published anytime the robot battery switches between the two possible states: low battery (i.e `True` is published) and recharged (i.e `False` is published). 
 In particular, the simulation of the battery level is defined by a while-loop which modifies the boolean value in a random way, but you can also set the value of the delay variable in order to publish it using a specific delay. 
+
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/diagrams/robot_state_diagram.png?raw=true) 
 ### The `Planner` node ###
 The Planner node implements a `SimpleActionServer` named `motion/planner`. It requires as goal a string representing the location to reach, then it checks the current location of the robot and transforms the current and the target location from string to point coordinates thanks to the `anm.coordinates` parameter, that contains, for each location, the corresponding coordinates. Given the current and target points location, this component returns a plan as a list of `via_points`, which are randomly generated inside the range represented by the current and target points location. So, when a new `via_points` is generated, the updated plan is provided as `feedback`and when all the `via_points` have been generated, the plan is provided as `results`.
+
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/diagrams/planner_diagram.png?raw=true) 
 ### The `Controller` node ###
 The Controller node implements a `SimpleActionServer` named `motion/controller`. It requires as goal a list of `via_points` given by the `planner`. 
