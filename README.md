@@ -27,7 +27,8 @@ So, as it's evident, the environment is composed by 3 different main classes:
 To use this OWL ontology and its reasoner within ROS I used aRMOR [1], in particular armor_py_api [2], which simplifies the calls to aRMOR, but it can only be used from a python-based ROS node. 
 
 ### 3. Software Components
-The software is composed of 4 nodes, each one available in the `scripts/` folder. 
+The software is composed of 4 nodes, each one available in the `scripts/` folder. Below is reported the software architecture diagram.
+![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/architecture_diagram.png?raw=true) 
 ### The `robot-state` node ###
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/robot_state_diagram.png?raw=true) 
 This node implements a publisher of `Boolean` messages into the `state/battery_low` topic. This boolean value is published anytime the robot battery switches between the two possible states: low battery (i.e `True` is published) and recharged (i.e `False` is published). 
