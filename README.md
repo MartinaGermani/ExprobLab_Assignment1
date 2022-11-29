@@ -27,7 +27,7 @@ So, as it's evident, the environment is composed by 3 different main classes:
 To use this OWL ontology and its reasoner within ROS I used aRMOR [1], in particular armor_py_api [2], which simplifies the calls to aRMOR, but it can only be used from a python-based ROS node. 
 
 ### 3. Software Components
-The software is composed of 4 nodes, each one available in the 'scripts/' folder. 
+The software is composed of 4 nodes, each one available in the `scripts/` folder. 
 
 ### References
 [1] https://github.com/EmaroLab/armor
