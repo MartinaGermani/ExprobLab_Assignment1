@@ -74,7 +74,10 @@ https://user-images.githubusercontent.com/91315691/204513960-1cee8d3c-ab54-4c7d-
 *middle-right*: **planner node**
 
 *bottom-right*: **state-assignment**
+
 After loaded the ontology, the robot starts in room E. The initial machine state is the `Move` state, so the robot moves in one of the reachable corridor where it will checks if some rooms is urgent to be visited. If there is an urgent room and the robot battery is charged, the state-assignment node sends the location to reach to the planner, which creates the via_points and sends it the result, then this result will be passed to the controlled which simulates the robot motion, and then the ontology will be updated replacing the new current position of the robot. At this point it will check if the battery is low, so if it is low the machine switches to the `Recharge` state, otherwise in the `Wait` state.
+If the machine enters in the `Recharge` state, first of all it checks the currrent position of the robot: if the robot is alread in the recharging room station (i.e room E), it can start the recharging (simulated by passing some seconds), otherwise first it has to move in the recharging room. Once the recharging is finished, the machine passes in the `Move` state assuming a behaviour as above described.
+If the machine enters in the `Wait` state, it recheck if the robot battery is low and if it is charged it simulate a waiting by passing some seconds in the current location. 
 
 
 ### 6. Working hypothesis and environment
