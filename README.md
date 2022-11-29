@@ -5,7 +5,7 @@ In this repository, you can find a software architecture for planning and contro
 
 The goal of the robot is to move between different locations in order to visit them and stay there for some times; in particular, the robot has to mainly stay in the corridors and move in a room if it becomes urgent because it has not been visited for some times. Moreover, when its battery is low, it has to move in the recharging station in order to recharge. 
 
-### 2. Software Architecture
+### 2. Software Behaviour
 For implementing the robot's behavior described above, the State Machine is composed by three different states:
 -   Move state, where the robot moves between corridors and rooms, when one of them becomes urgent,
 -   Wait state, where the robot waits for some times in the current location,
@@ -26,6 +26,8 @@ So, as it's evident, the environment is composed by 3 different main classes:
 
 To use this OWL ontology and its reasoner within ROS I used aRMOR [1], in particular armor_py_api [2], which simplifies the calls to aRMOR, but it can only be used from a python-based ROS node. 
 
+### 3. Software Components
+The software is composed of 4 nodes, each one available in the 'scripts/' folder. 
 
 ### References
 [1] https://github.com/EmaroLab/armor
