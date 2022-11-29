@@ -63,7 +63,7 @@ Once you have all the installation required, you have to do the following steps:
 ```roslaunch assignment_exproblab assignment.launch```
 
 ### 5. Commented running
-
+![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/simulation.mp4?raw=true)
 ### 6. Working hypothesis and environment
 
 ### 7. Author and Contact
