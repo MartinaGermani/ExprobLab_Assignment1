@@ -47,7 +47,7 @@ So, as it's evident, the environment is composed by 3 different main classes:
 - `LOCATION`, which contains 2 subclasses: CORRIDOR (C1, C2) and ROOM (E, R1, R2, R3, R4)
 - `ROBOT`: Robot1
 
-To use this OWL ontology and its reasoner within ROS I used `aRMOR` [1], in particular `armor_py_api` [2], which simplifies the calls to aRMOR, but it can only be used from a python-based ROS node.
+To use this OWL ontology and its reasoner within ROS I used [aRMOR](https://github.com/EmaroLab/armor), in particular [ArmorPy API](https://github.com/EmaroLab/armor_py_api), which simplifies the calls to aRMOR, but it can only be used from a python-based ROS node.
 
 ### 4. Installation and running procedure
 This architecture runs on ROS noetic. It also requires [aRMOR](https://github.com/EmaroLab/armor) and the [ArmorPy API](https://github.com/EmaroLab/armor_py_api).
@@ -62,8 +62,3 @@ Once you have all the installation required, you have to do the following steps:
 
 ```roslaunch assignment_exproblab assignment.launch```
 
-
-### References
-[1] https://github.com/EmaroLab/armor
-
-[2] https://github.com/EmaroLab/armor_py_api
