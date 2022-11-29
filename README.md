@@ -29,7 +29,7 @@ To use this OWL ontology and its reasoner within ROS I used aRMOR [1], in partic
 ### 3. Software Components
 The software is composed of 4 nodes, each one available in the `scripts/` folder. 
 ### The `robot-state` node ###
-![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/robot_state_diagram.jpg?raw=true)
+![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/robot_state_diagram.png?raw=true)
 
 ### References
 [1] https://github.com/EmaroLab/armor
