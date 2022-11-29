@@ -54,6 +54,7 @@ So, as it's evident, the environment is composed by 3 different main classes:
 To use this OWL ontology and its reasoner within ROS I used [aRMOR](https://github.com/EmaroLab/armor), in particular [ArmorPy API](https://github.com/EmaroLab/armor_py_api), which simplifies the calls to aRMOR, but it can only be used from a python-based ROS node.
 
 For simulating the motion of the robot I created a parameter called `coordinates` which contains the point coordinates which I set for each location in the environment. These coordinates will be used by the planner for planning the path which the robot should follow in order to reach the desired location. The following map shows the points associated to each location.
+
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/diagrams/map_points.jpg?raw=true)
 
 ### 4. Installation and running procedure
