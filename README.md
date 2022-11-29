@@ -63,14 +63,19 @@ Once you have all the installation required, you have to do the following steps:
 ```roslaunch assignment_exproblab assignment.launch```
 
 ### 5. Commented running
-Here I reporte a video which shows how the architecture behaves:
+Here I reported a video which shows how the architecture behaves:
 
 https://user-images.githubusercontent.com/91315691/204513960-1cee8d3c-ab54-4c7d-813a-ff6d7996b1b3.mp4
 
 *bottom-left*: **robot-state node**
+
 *top-right*: **controller node**
+
 *middle-right*: **planner node**
+
 *bottom-right*: **state-assignment**
+After loaded the ontology, the robot starts in room E. The initial machine state is the `Move` state, so the robot moves in one of the reachable corridor where it will checks if some rooms is urgent to be visited. If there is an urgent room and the robot battery is charged, the state-assignment node sends the location to reach to the planner, which creates the via_points and sends it the result, then this result will be passed to the controlled which simulates the robot motion, and then the ontology will be updated replacing the new current position of the robot. At this point it will check if the battery is low, so if it is low the machine switches to the `Recharge` state, otherwise in the `Wait` state.
+
 
 ### 6. Working hypothesis and environment
 
