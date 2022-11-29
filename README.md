@@ -6,7 +6,7 @@ In this repository, you can find a software architecture for planning and contro
 The goal of the robot is to move between different locations in order to visit them and stay there for some times; in particular, the robot has to mainly stay in the corridors and move in a room if it becomes urgent because it has not been visited for some times. Moreover, when its battery is low, it has to move in the recharging station in order to recharge. 
 
 ### 2. Software Components
-The software is composed of 4 nodes, each one available in the `scripts/` folder. Below is reported the software architecture diagram.
+The software is composed of 4 nodes, each one available in the `scripts/` folder. Moreover there is an `architecture_name_mapper` interface which containes all the names of the parameters, topics and services used in the architecture. Below is reported the software architecture diagram.
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/diagrams/architecture_diagram.png?raw=true) 
 ### The `robot-state` node ###
 The robot-state node implements a publisher of `Boolean` messages into the `state/battery_low` topic. This boolean value is published anytime the robot battery switches between the two possible states: low battery (i.e `True` is published) and recharged (i.e `False` is published). 
@@ -79,10 +79,19 @@ After loaded the ontology, the robot starts in room E. The initial machine state
 If the machine enters in the `Recharge` state, first of all it checks the currrent position of the robot: if the robot is already in the recharging station (i.e room E), it can start the recharging (simulated by passing some seconds), otherwise first it has to move in the recharging room. Once the recharging is finished, the machine passes in the `Move` state assuming a behaviour as above described.
 If the machine enters in the `Wait` state, it rechecks if the robot battery is low and if it is charged it simulate a waiting by passing some seconds in the current location. 
 
-
 ### 6. Working hypothesis and environment
+Working hypothesis and environment:
+- the location `E` is a `ROOM`
+- the robot starts in room `E` with fully recharged battery
+- the position of each `ROOM` is setted as described in the `coordinates` parameter inside the `architecture_name_mapper` interface.
+### 7. Limitations
+System limitations:
+- there is not a physical model for the motion but it is only simulated
+- the loading of the ontology is static and it is based on a known environment, while a possible improvement could consist in creating the ontology in real-time as the robot moves in the environment
+- the sequence of urgent rooms to visit is fixed having set in advance a timestamp for each location, a value which will then be updated as the robot visits the location itself. 
 
-### 7. Author and Contact
+
+### 8. Author and Contact
 *Author*: **Germani Martina**
 
 *Contact*: **martina.germani99@gmail.com**
