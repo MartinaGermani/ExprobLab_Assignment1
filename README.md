@@ -44,6 +44,10 @@ In particular, given the plan, this component waits fro each planned `via_points
 When the last `via_points` is reached, it provides a result.
 
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/diagrams/controller_diagram.png?raw=true) 
+### The `State-Assignment` node ###
+The State-Assignment node implements the `Finite-State-Machine` which manages the behaviour of the robot. In particular it communicates with the ontology and with the reasoner of aRMOR through the use of `armor_py_api`: in this way the robot can move between the different locations defined in the ontology. Moreover this component calls the `planner` and the `controller` in order to simulate the motion of the robot in the environment, and it receives information about the robot battery from the robot-state node. 
+
+![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/diagrams/state_assignment_diagram.png?raw=true)
 ### References
 [1] https://github.com/EmaroLab/armor
 
