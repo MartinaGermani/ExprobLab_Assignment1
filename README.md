@@ -62,3 +62,10 @@ Once you have all the installation required, you have to do the following steps:
 
 ```roslaunch assignment_exproblab assignment.launch```
 
+### 5. Commented running
+
+### 6. Working hypothesis and environment
+
+### 7. Author and Contact
+*Author*: **Germani Martina**
+*Contact*: **martina.germani99@gmail.com**
