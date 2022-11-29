@@ -30,9 +30,9 @@ To use this OWL ontology and its reasoner within ROS I used aRMOR [1], in partic
 The software is composed of 4 nodes, each one available in the `scripts/` folder. Below is reported the software architecture diagram.
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/architecture_diagram.png?raw=true) 
 ### The `robot-state` node ###
-![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/robot_state_diagram.png?raw=true) 
 The robot-state node implements a publisher of `Boolean` messages into the `state/battery_low` topic. This boolean value is published anytime the robot battery switches between the two possible states: low battery (i.e `True` is published) and recharged (i.e `False` is published). 
 In particular, the simulation of the battery level is defined by a while-loop which modifies the boolean value in a random way, but you can also set the value of the delay variable in order to publish it using a specific delay. 
+![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/robot_state_diagram.png?raw=true) 
 ### The `Planner` node ###
 The Planner node implements a `SimpleActionServer` named `motion/planner`. It requires as goal a string representing the location to reach, then it checks the current location of the robot and transforms the current and the target location from string to point coordinates thanks to the `anm.coordinates` parameter, that contains, for each location, the corresponding coordinates. Given the current and target points location, this component returns a plan as a list of `via_points`, which are randomly generated inside the range represented by the current and target points location. So, when a new `via_points` is generated, the updated plan is provided as `feedback`and when all the `via_points` have been generated, the plan is provided as `results`.
 ![alt text](https://github.com/MartinaGermani/ExprobLab_Assignment1/blob/main/planner_diagram.png?raw=true) 
