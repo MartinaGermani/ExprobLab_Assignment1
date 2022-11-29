@@ -57,7 +57,9 @@ Once you have all the installation required, you have to do the following steps:
 - go in the `scripts/` folder and run `chmod +x *`
 - run `catkin_make` in the workspace
 - once the workspace is built, open two terminals and execute the following commands:
+
 ```rosrun armor execute it.emarolab.armor.ARMORMainService```
+
 ```roslaunch assignment_exproblab assignment.launch```
 
 
