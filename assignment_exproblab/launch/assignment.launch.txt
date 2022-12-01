@@ -1,0 +1,8 @@
+<launch>
+        <rosparam param="config/environment_size">[10.0,10.0]</rosparam>
+
+        <node pkg="assignment_exproblab" type="robot_state.py" name="robot_state" output="screen>
+        <node pkg="assignment_exproblab" type="StateAssignment_PROVA.py" name="StateAssignment_P>
+        <node pkg="assignment_exproblab" type="Planner_prova.py" name="Planner_prova" output="sc>
+        <node pkg="assignment_exproblab" type="Controller_prova.py" name="Controller_prova" outp>
+</launch>
