@@ -4,5 +4,5 @@
         <node pkg="assignment_exproblab" type="robot_state.py" name="robot_state" output="screen">
         <node pkg="assignment_exproblab" type="StateAssignment_PROVA.py" name="StateAssignment_PROVA", output="screen">
         <node pkg="assignment_exproblab" type="Planner_prova.py" name="Planner_prova" output="screen">
-        <node pkg="assignment_exproblab" type="Controller_prova.py" name="Controller_prova" output="scrren">
+        <node pkg="assignment_exproblab" type="Controller_prova.py" name="Controller_prova" output="screen">
 </launch>
