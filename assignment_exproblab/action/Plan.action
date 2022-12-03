@@ -1,0 +1,20 @@
+###### Motion planning interface 
+
+### Action Server Goal
+
+# the point location to be reached at the end of the plan.
+string location_to_reach
+
+---
+
+### Action Server Result
+
+# the plan, which is composed by the via_points to reach the target given the current location.
+Point[] via_points
+
+---
+
+### Action Server Feedback
+
+# the set of via_points computed so far.
+Point[] via_points
