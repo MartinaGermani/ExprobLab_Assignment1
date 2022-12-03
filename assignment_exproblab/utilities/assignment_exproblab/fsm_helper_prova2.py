@@ -33,7 +33,7 @@ from assignment_exproblab import architecture_name_mapper as anm
 # Import ROS-based messages.
 from std_msgs.msg import Bool
 #from assignment_exproblab.msg import PlanAction
-from assignment_exproblab.srv import Location, LocationResponse
+#from assignment_exproblab.srv import Location, LocationResponse
 from assignment_exproblab.msg import PlanAction, ControlAction, PlanGoal, ControlGoal
 from armor_api.armor_client import ArmorClient
 
