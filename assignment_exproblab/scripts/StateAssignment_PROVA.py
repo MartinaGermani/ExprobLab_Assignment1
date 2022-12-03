@@ -38,7 +38,7 @@ from std_msgs.msg import Bool
 from assignment_exproblab import architecture_name_mapper as anm
 from assignment_exproblab.fsm_helper_prova2 import InterfaceHelper
 from assignment_exproblab.msg import Point, PlanAction, PlanGoal, ControlAction, ControlGoal
-from assignment_exproblab.srv import Location, LocationResponse
+#from assignment_exproblab.srv import Location, LocationResponse
 
 
 client = ArmorClient('armor_client', 'assignment')
